@@ -19,7 +19,7 @@ public:
    string name;
    int id;
    int grams;
-   double nutri[MACROSCOUNT];
+   std::array<double, MACROSCOUNT> nutri;
    Item(string a, int b, int c, double protein, double fat, double saturated, double unsaturated, double carbs, double sugar) {
       name = a;
       id = b;
@@ -36,10 +36,13 @@ public:
 
 int main()
 {
+   using namespace std::chrono_literals;
+   using std::chrono::system_clock;
    cout << "Let us first examine the first-ever discovered 'Brotato'.\n" << endl;
    Item test("Brotato",1,100,5,10,12.5,11.1,13,8);
    test.print();
    cout << endl << endl << "Wow, nutritious!" << endl;
+   std::this_thread::sleep_for(3s);
 
    std::tr1::unordered_map<string, Item> bluePrint;
    while(1){
