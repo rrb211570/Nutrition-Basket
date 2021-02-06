@@ -1,0 +1,8 @@
+Nutrition: Brotato2
+
+Carbs: 1
+Protein: 5
+Sugar: 4
+Fat: 3
+Saturated: 4
+Unsaturated: 5
