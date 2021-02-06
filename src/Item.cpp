@@ -18,7 +18,7 @@ public:
    Item(string line){
       //throw errorMsg[0]+line;
       int start = 0;
-      int curField = 0; // 0:name, 1-6: Macros
+      int curField = 0; // 0-5: Macros
       int commaIndex = line.find(',',start);
       name = line.substr(0,commaIndex);
 

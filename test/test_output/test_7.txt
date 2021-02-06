@@ -1,0 +1,6 @@
+Carbs:0.714286
+Protein:3.85714
+Sugar:13131.9
+Fat:3.57143
+Saturated:0.571429
+Unsaturated:1.85714

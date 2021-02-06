@@ -45,6 +45,14 @@ void test6(ItemList *basket, fstream *file){
    basket->save(*file);
 }
 
+// Avg of ItemList
+void test7(ItemList *basket, fstream *file){
+   array<double, MACROSCOUNT> avgVals = basket->average(7);
+   for(int i=0;i<MACROSCOUNT;++i){
+      *file << macros[i] << ":" << avgVals[i] << endl;
+   }
+}
+
 struct {
    const char *output;
    const char *expectedOutput;
@@ -56,17 +64,18 @@ struct {
    {"test_output/test_3.txt", "expected_output/expected_test_3.txt", test3, "Update Item       "},
    {"test_output/test_4.txt", "expected_output/expected_test_4.txt", test4, "Remove Item       "},
    {"test_output/test_5.txt", "expected_output/expected_test_5.txt", test5, "Save ItemList     "},
-   {"test_output/test_6.txt", "expected_output/expected_test_6.txt", test6, "Load ItemList     "}
+   {"test_output/test_6.txt", "expected_output/expected_test_6.txt", test6, "Load ItemList     "},
+   {"test_output/test_7.txt", "expected_output/expected_test_7.txt", test7, "Avg of ItemList   "}
 };
 
 int main()
 {
-   int tests = 6;
+   int tests = 7;
    int passed = 0;
    ItemList basket;
 
    cout << "Running tests:" << endl;
-   for (int i = 0; i < 6; ++i) {
+   for (int i = 0; i < 7; ++i) {
       cout << fileList[i].label << " : ";
       ofstream temp(fileList[i].output); //creates if necessary
       temp.close();
